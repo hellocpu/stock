@@ -1,11 +1,13 @@
-¹¤³ÌÓÃÓÚspring bootÁ·Ï°¡¢spring4.0ÐÂÌØÐÔ
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½spring bootï¿½ï¿½Ï°ï¿½ï¿½spring4.0ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
-1¡¢Á·Ï°ÁË¶ÁÈ¡properties¡¢yamlÅäÖÃÎÄ¼þ
+1ï¿½ï¿½ï¿½ï¿½Ï°ï¿½Ë¶ï¿½È¡propertiesï¿½ï¿½yamlï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½
 
-2¡¢Á·Ï°ÁË·Ö»·¾³ÎÄ¼þÅäÖÃ
+2ï¿½ï¿½ï¿½ï¿½Ï°ï¿½Ë·Ö»ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½
 
-3¡¢Á·Ï°ÁËthymeleaf¼¯³É http://blog.csdn.net/u014695188/article/details/52347318 http://jisonami.iteye.com/blog/2301387£¬http://412887952-qq-com.iteye.com/blog/2292402
-	ÕûÌå²½Öè£º
-		£¨1£©            ÔÚpom.xmlÖÐÒýÈëthymeleaf;
-		£¨2£©            ÈçºÎ¹Ø±Õthymeleaf»º´æ
-		£¨3£©            ±àÐ´Ä£°åÎÄ¼þ.html
+3ï¿½ï¿½ï¿½ï¿½Ï°ï¿½ï¿½thymeleafï¿½ï¿½ï¿½ï¿½ http://blog.csdn.net/u014695188/article/details/52347318 http://jisonami.iteye.com/blog/2301387ï¿½ï¿½http://412887952-qq-com.iteye.com/blog/2292402
+	ï¿½ï¿½ï¿½å²½ï¿½è£º
+		ï¿½ï¿½1ï¿½ï¿½            ï¿½ï¿½pom.xmlï¿½ï¿½ï¿½ï¿½ï¿½ï¿½thymeleaf;
+		ï¿½ï¿½2ï¿½ï¿½            ï¿½ï¿½Î¹Ø±ï¿½thymeleafï¿½ï¿½ï¿½ï¿½
+		ï¿½ï¿½3ï¿½ï¿½            ï¿½ï¿½Ð´Ä£ï¿½ï¿½ï¿½Ä¼ï¿½.html
+
+4 test compare branch
