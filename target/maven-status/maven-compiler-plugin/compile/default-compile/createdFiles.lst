@@ -1,0 +1,11 @@
+com\bs\wt\config\PropertiesConfig.class
+com\bs\wt\config\YamlConfig.class
+com\bs\wt\controller\SimpleController.class
+com\bs\wt\service\PostService.class
+com\bs\wt\bean\Report.class
+com\bs\wt\mapper\PostMapper.class
+com\bs\wt\ApplicationTest.class
+com\bs\wt\config\JdbcConfig.class
+com\bs\wt\util\UpTokenUtil.class
+com\bs\wt\bean\PushForm.class
+com\bs\wt\config\ProConfig.class

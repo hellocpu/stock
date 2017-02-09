@@ -1,0 +1,18 @@
+<div class="header" th:fragment="header">
+   	  	<ul>
+   	  		<li th:class="${current=='index'} ? 'current'">
+   	  			<a th:text="#{bsfit.header.index}" th:href="@{/}"></a>
+   	  		</li>
+   	  		<li  th:class="${current=='dayup'} ? 'current'">
+   	  			<a th:text="#{bsfit.header.dayup}" th:href="@{/dayup}"></a>
+   	  		</li>
+   	  		<li th:class="${current=='code'} ? 'current'">
+   	  			<a th:text="#{bsfit.header.code}" th:href="@{/codelist}"></a>
+   	  		</li>
+   	  		<li th:class="${current=='lanuch'} ? 'current'">
+   	  			<a th:text="#{bsfit.header.lanuch}" th:href="@{/pullup}"></a>
+   	  		</li>
+   	  		 <span id="time"></span>
+   	  	</ul>
+</div>
+

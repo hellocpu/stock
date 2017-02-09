@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>内容发布</title>
+<!-- 新 Bootstrap 核心 CSS 文件 -->
+<link rel="stylesheet"
+	href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css" />
+<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+<script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<style type="text/css">
+	.panel-info{
+		position: relative;
+	}
+	.deletebutton{
+		position: absolute;
+		top:0;
+		right: 0;
+	}
+</style>
+<script>
+	$(function(){
+		$(".deletebutton").click(function(){
+			var value = $(this).attr("value");
+			 $(this).parent().hide(1000);
+			$.post('/delete',{
+				uuid:value
+			},function(result){
+			  
+			});
+		});
+	});
+</script>
+</head>
+<body>
+	<div class="container">
+		<div th:replace="/push/header::header ('delete')"></div>
+
+		<div class="panel panel-info" th:each="obj:${list}">
+			<div class="panel-heading">
+				<h3 class="panel-title" th:text="${obj.type} == 1 ? #{bsfit.header.dayup} : (${obj.type} == 2? #{bsfit.header.code} : #{bsfit.header.lanuch})">面板标题</h3>
+			</div>
+			<div class="panel-body" th:text="*{obj.title}">
+			</div>
+			<button type="button" class="btn btn-primary deletebutton" th:value="*{obj.id}">删 除</button>
+		</div>
+
+	</div>
+</body>
+</html>

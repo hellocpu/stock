@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+    xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+    layout:decorator="layout/layout" th:with="current='lanuch'">
+	<div class="container" layout:fragment="content">
+   	  <!-- <div class="location">
+   	  <img src="/img/right_finger.png"/>
+   	  	<span th:text="#{bsfit.location.now}"></span>
+   	  	<span th:text="#{bsfit.header.lanuch}"></span>
+   	  </div> -->
+   	   <div class="content" th:object="${object}">
+	   	  <div class="title">
+	   	  		<span th:text="#{bsfit.header.lanuch}"></span>
+	   	  		<a th:text="*{title}"></a>
+	   	  	</div>
+	   	  	<div class="date">
+	   	  		<i class="admin_img"></i>
+	   	  		<span class="admin" th:text="#{bsfit.date.admin}"></span>
+	   	  		<i class="time_img"></i>
+	   	  		<span class="time" th:text="*{dateStr}"></span>
+	   	  		<i class="zhang"></i>
+	   	  		<span th:text="#{bsfit.header.lanuch}"></span>
+	   	  	</div>
+	   	  	<div class="detail_dayup" th:object="${tmp}">
+	   	  		<div class="fixed fixed5  redcolor" th:text="${object.title}">
+	   	  		</div>
+	   	  		<div class="fixed  fixed1">
+	   	  			<span th:text="*{title2}"></span>
+	   	  		</div>
+	   	  		<div>
+	   	  			<img th:src="@{${object.hash}}"/>
+	   	  		</div>
+	   	  	</div>
+	   	  	
+   	  </div>
+   	</div>
+</html>

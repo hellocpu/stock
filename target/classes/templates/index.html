@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+	layout:decorator="layout/layout"   th:with="current='index'">
+	<div layout:fragment="content" class="content_">
+		<div class="content" th:each="obj:${list}">
+			<div class="title">
+				<span th:if="${obj.type} ==1" th:text="#{bsfit.dayup.content}"></span>
+				<span th:if="*{obj.type} ==2" th:text="#{bsfit.header.code}"></span>
+				<span th:if="*{obj.type} ==3" th:text="#{bsfit.header.lanuch}"></span>
+				<a th:text="*{obj.title}"></a>
+			</div>
+			<div class="date">
+				<i class="admin_img"></i> <span class="admin"
+					th:text="#{bsfit.date.admin}"></span> <i class="time_img"></i> <span
+					class="time" th:text="${obj.dateStr}"></span>
+			</div>
+			<div class="detail">
+				<div class="left">
+					<img th:src="@{(${obj.hash})}" />
+				</div>
+				<div class="right" th:text="${obj.content}"></div>
+			</div>
+			<div class="label">
+				<span> <img src="/img/label.png" />
+				</span> <span class="label_span" th:text="#{bsfit.label.title}"></span>
+				<span class="readall" th:switch="${obj.type}">
+					<a th:case="1" th:href="@{/readdayup(uuid=*{obj.id})}" th:text="#{bsfit.readmore}"></a>
+					<a th:case="2" th:href="@{/readcode(uuid=*{obj.id})}" th:text="#{bsfit.readmore}"></a>
+					<a th:case="3" th:href="@{/readpullup(uuid=*{obj.id})}" th:text="#{bsfit.readmore}"></a>
+				</span>
+			</div>
+		</div>
+				<div class="pagination"></div>
+				<div class="input_search">
+				<form th:action="@{/}" id="form" th:method="post">
+					<input type="hidden" class="form-control" id="current_page" name="currentpage" th:value="*{currentpage }" />
+				</form>
+				</div>
+	</div>
+</html>

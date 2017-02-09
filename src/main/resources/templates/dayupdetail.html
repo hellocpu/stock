@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+    xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+    layout:decorator="layout/layout" th:with="current='dayup'">
+	<div class="container" layout:fragment="content">
+   	   <div class="content" th:object="${object}">
+	   	  <div class="title">
+	   	  		<span th:text="#{bsfit.dayup.content}"></span>
+	   	  		<a th:text="*{title}"></a>
+	   	  	</div>
+	   	  	<div class="date">
+	   	  		<i class="admin_img"></i>
+	   	  		<span class="admin" th:text="#{bsfit.date.admin}"></span>
+	   	  		<i class="time_img"></i>
+	   	  		<span class="time" th:text="*{dateStr}"></span>
+	   	  		<i class="zhang"></i>
+	   	  		<span th:text="#{bsfit.header.dayup}"></span>
+	   	  	</div>
+	   	  	<div class="detail_dayup" th:object="${tmp}">
+	   	  		<div class="fixed fixed1" th:text="*{title1}">
+	   	  		</div>
+	   	  		<div class="fixed fixed2">
+	   	  			<span th:text="#{bsfit.notice}"></span>
+	   	  			<span th:text="*{title2}"></span>
+	   	  		</div>
+	   	  		<div>
+	   	  			<img th:src="@{${object.hash}}"/>
+	   	  		</div>
+	   	  		<div class="fixed fixed3">
+	   	  			<p th:text="*{title3}">
+	   	  			</p>
+	   	  		</div>
+	   	  		<div class="fixed fixed4">
+		   	  		<span  th:text="*{title4}"></span>
+		   	  		<span th:text="#{bsfit.qq}"></span>
+	   	  		</div>
+	   	  		<div class="fixed fixed5" th:text="*{title5}">
+	   	  		</div>
+	   	  	</div>
+	   	  	
+   	  </div>
+   	</div>
+</html>

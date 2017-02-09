@@ -1,0 +1,43 @@
+spring:
+  data:
+    mongodb:
+      uri: mongodb://112.126.80.99:27017/fingerprint
+  datasource:
+    name: stock
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://127.0.0.1:3306/stock
+    username: root
+    password:
+    driver-class-name: com.mysql.jdbc.Driver
+    minIdle: 1  
+    maxActive: 2  
+    initialSize: 1  
+    timeBetweenEvictionRunsMillis: 3000  
+    minEvictableIdleTimeMillis: 300000  
+    validationQuery: SELECT 'ZTM' FROM DUAL  
+    testWhileIdle: true  
+    testOnBorrow: false  
+    testOnReturn: false
+     # mvc:
+  #  view:
+   #   prefix: classpath:/templates/
+    #  suffix: .html
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+    mode: HTML5
+    encoding: UTF-8
+    content-type: text/html
+    cache: false
+  http:
+    encoding:
+      force: true
+    
+mybatis:   
+  mapperLocations: classpath*:com/bs/wt/mapper/*.xml  
+  typeAliasesPackage: com.bs.wt.bean
+fixed:
+     switch: 10
+qiniu:
+    ak: ZJOICPFy1UezLJ3CarIv3vIvTDCZ93OnycrqRtbd
+    sk: Z54m-zHM5B17Gy2CSeH6UN-WlUhB9RMN_03iTskH

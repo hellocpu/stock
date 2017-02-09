@@ -1,0 +1,11 @@
+工程用于spring boot练习、spring4.0新特性
+
+1、练习了读取properties、yaml配置文件
+
+2、练习了分环境文件配置
+
+3、练习了thymeleaf集成 http://blog.csdn.net/u014695188/article/details/52347318 http://jisonami.iteye.com/blog/2301387，http://412887952-qq-com.iteye.com/blog/2292402
+	整体步骤：
+		（1）            在pom.xml中引入thymeleaf;
+		（2）            如何关闭thymeleaf缓存
+		（3）            编写模板文件.html
