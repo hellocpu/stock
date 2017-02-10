@@ -187,7 +187,6 @@ public class SimpleController {
 	//提交表单后进行数据读取，并将数据传出
     @RequestMapping(value = "/push",method = RequestMethod.POST)
     public String bb(@Valid PushForm pushForm,BindingResult bindingResult,Model model) {
-    	pushForm.setHash("");
     	model.addAttribute("token", getToken());
         if(bindingResult.hasErrors()){
         }else{
@@ -198,6 +197,7 @@ public class SimpleController {
     		 model.addAttribute("error","发布失败");
     	 }
      }
+        pushForm.setHash("");
         return "push/push";
     }
     
