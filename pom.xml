@@ -82,4 +82,28 @@
 		<filter>src/main/resources/jdbc-${profiles.active}.properties</filter>
 	</filters>
 </build> -->
+<build>
+	 <plugins>
+	 	 <plugin>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-maven-plugin</artifactId>
+        <version>1.3.2.bs</version>
+        <configuration>
+          <layout>ZIP</layout>
+          <mainClass>com.bs.wt.ApplicationTest</mainClass>
+          <password>wt</password>
+          <encryptSet>
+            <include>wt-.*\.jar</include>
+          </encryptSet>
+        </configuration>
+        <executions>
+          <execution>
+            <goals>
+              <goal>repackage</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+	 </plugins>
+</build>
 </project>
