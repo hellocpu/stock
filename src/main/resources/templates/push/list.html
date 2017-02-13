@@ -36,7 +36,7 @@
 </head>
 <body>
 	<div class="container">
-		<div th:replace="/push/header::header ('delete')"></div>
+		<div th:replace="header::header ('delete')"></div>
 
 		<div class="panel panel-info" th:each="obj:${list}">
 			<div class="panel-heading">

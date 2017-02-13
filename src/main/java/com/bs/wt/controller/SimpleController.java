@@ -61,74 +61,6 @@ public class SimpleController {
 	private static final int CODE = 2;
 	private static final int SHEN = 3;
 	public static final int DEFAULT_PAGE_SIZZE = 10;
-		
-//
-//	@Autowired
-//	private TestService testService;
-//
-//	@Autowired
-//	private ReportService reportService;
-//
-//	@Value("${fixed.switch}")
-//	private String switch_; // spring �Ĺ淶
-//
-//	@Autowired
-//	private YamlConfig ymalConfig; // spring �Ĺ淶
-//
-//	@Autowired
-//	private PropertiesConfig propertiesConfig; // spring �Ĺ淶
-//
-//	@Value("${jdbc.username}")
-//	private String username; // �Զ����properties ���� yml ��Ҫʹ��
-//
-//	@Value("${jdbc.password}")
-//	private String password;
-//
-//	@Value("${xiaomi.ak}")
-//	private String ak;
-//	
-//	@Value("${xiaomi.sk}")
-//	private String sk;
-//	
-//	@Value("${xiaomi.uri}")
-//	private String uri;
-//	
-//	@RequestMapping("/test")
-//	@ResponseBody
-//	public String test() {
-//		testService.sayHello();
-//		return "hello,world!";
-//	}
-//
-//	@RequestMapping("/report")
-//	public String report() {
-//		log.debug("switch_:{}", switch_);
-//		log.info("yml config :{}", ymalConfig.getUser());
-//		log.info("pro config :{}", propertiesConfig.getUser());
-//		reportService.createReport();
-//		return "index";
-//	}
-//
-//	@RequestMapping("/jdbc")
-//	public String jdbc() {
-//		log.info("jdbc config:jdbc.username={}", username);
-//		log.info("jdbc config:jdbc.password={}", password);
-//		return "index";
-//	}
-//
-//	@RequestMapping("/xiaomi")
-//	public String xiaomi() {
-//		log.info("xiaomi.ak={}",ak);
-//		log.info("xiaomi.sk={}",sk);
-//		log.info("xiaomi.uri={}",uri);
-//		return "index";
-//	}
-//	
-//	@RequestMapping("/baofoo")
-//	public String baofoo(){
-//		testService.baofoo();
-//		return "index";
-//	}
 	
 	@RequestMapping(value="/",method=RequestMethod.GET)
 	public String toIndex(Model model){
@@ -179,9 +111,10 @@ public class SimpleController {
 	
 	@RequestMapping(value="/cjl",method=RequestMethod.GET)
 	public String stockBack(PushForm pushForm,Model model){
+		log.info("进入控制台");
 		pushForm.setTitle(String.format(TITLE, ymd(YMD),week(EEEE).substring(week(EEEE).length()-1, week(EEEE).length()),week(MD)));
 		model.addAttribute("token", getToken());
-		return "push/push";
+		return "push";
 	}
 	
 	//提交表单后进行数据读取，并将数据传出
@@ -198,14 +131,14 @@ public class SimpleController {
     	 }
      }
         pushForm.setHash("");
-        return "push/push";
+        return "push";
     }
     
     @RequestMapping(value="/controllist",method=RequestMethod.GET)
     public String controlList(Model model){
     	List<PushForm> list = postService.getTopTenPost();
     	model.addAttribute("list", list);
-    	return "push/list";
+    	return "list";
     }
     
     @ResponseBody
@@ -215,7 +148,7 @@ public class SimpleController {
     	return "success";
     }
     
-    @RequestMapping("/pushtype")
+    @RequestMapping(value="/pushtype",produces="text/html;charset=UTF-8")
     @ResponseBody
     public String pushType(int type){
     	if(type == 1){
