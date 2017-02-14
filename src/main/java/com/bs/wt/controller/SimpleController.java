@@ -293,5 +293,7 @@ public class SimpleController {
     	String datestr=sdf.format(ca.getTime()); 
     	return datestr;
     }
-    
+    public static void main(String[] args) {
+		System.out.println("你好nihao");
+	}
 }
