@@ -2,10 +2,29 @@
 <configuration>
 	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
 		<layout class="ch.qos.logback.classic.PatternLayout">
-			<pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level %logger{36} -%msg%n</pattern>
+			<pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level %logger{36} -%msg%n
+			</pattern>
+		</layout>
+	</appender>
+
+	<appender name="fileAppender"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<Prudent>true</Prudent>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<FileNamePattern>
+				../log/stock.%d{yyyy-MM-dd}.log
+			</FileNamePattern>
+			<!-- keep 60 days worth of history -->
+			<MaxHistory>60</MaxHistory>
+		</rollingPolicy>
+		<layout class="ch.qos.logback.classic.PatternLayout">
+			<Pattern>
+				%d{yyyy-MM-dd HH:mm:ss} -%msg%n
+			</Pattern>
 		</layout>
 	</appender>
 	<root level="INFO" name="com.bs.fit.controller">
 		<appender-ref ref="STDOUT"></appender-ref>
+		<appender-ref ref="fileAppender" />
 	</root>
 </configuration>
