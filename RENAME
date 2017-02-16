@@ -11,3 +11,5 @@
 		��3��            ��дģ���ļ�.html
 
 4 test compare branch
+
+install third jar to .m2 :mvn install:install-file -Dfile=dfp_verif-4.4.5.jar -DgroupId=com.bs -DartifactId=dfp_verif -Dversion=4.4.5 -Dpackaging=jar
