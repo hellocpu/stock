@@ -5,9 +5,11 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
 <title>财富推荐</title>
 <link rel="stylesheet" th:href="@{css/index.css}" type="text/css" />
+<link rel="stylesheet" th:href="@{css/qq.css}" type="text/css" />
 <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
 <script type="text/javascript" th:src="@{/js/time.js}"></script>
 <script type="text/javascript" th:src="@{/js/search.js}"></script>
+<script type="text/javascript" th:src="@{/js/qq.js}"></script>
 <script type="text/javascript" th:src="@{/pagejs/pagination.js}"></script>
 <link rel="stylesheet" th:href="@{/pagejs/pagination.css}" type="text/css" />
 <link rel="icon" type="image/x-icon" href="/images/100.jpg"/>
@@ -22,5 +24,6 @@
    	   <div layout:fragment="content"></div>
    	 <div th:substituteby="footer::footer"></div>
    	</div>
+   	<div th:substituteby="qq::qq"></div>
 </body>
 </html>
