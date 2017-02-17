@@ -1,6 +1,7 @@
 server:
   port: 80
 spring:
+  
   data:
     mongodb:
       uri: mongodb://112.126.80.99:27017/fingerprint
@@ -44,3 +45,7 @@ fixed:
 qiniu:
     ak: ZJOICPFy1UezLJ3CarIv3vIvTDCZ93OnycrqRtbd
     sk: Z54m-zHM5B17Gy2CSeH6UN-WlUhB9RMN_03iTskH
+    
+login:
+    userName: cjl
+    passWord: laohekoucjl!@#

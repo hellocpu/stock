@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title>登录</title>
+<!-- 新 Bootstrap 核心 CSS 文件 -->
+<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css"/>
+<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+<script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<style>
+	.null{
+		margin-top: 80px;
+	}
+	
+	.admin{
+		width:300px;
+		height:200px;
+		margin: 0 auto;
+	}
+	
+	.admin_title{
+		width:100%;
+		height: 30px;
+		background: #337ab7;
+		line-height: 30px;
+		color: white;
+		text-align: center;
+	}
+	.form{
+		margin-top: 8px;
+		width: 100%;
+	}
+	
+	.labelcenter{
+		line-height: 34px;
+		text-align: right;
+	}
+	
+	.submit{
+		display: block;
+		margin-left: auto;  
+   		margin-right: auto;  
+	}
+	
+</style>
+</head>
+<body>
+	<div class="container">
+		<div class="null"></div>
+		<div class="admin">
+			<div class="admin_title">管理员登录</div>
+			<div class="form">
+				<form class="form-horizontal" role="form" th:action="@{/login_}" th:object="${login}" th:method="post">
+					  <div class="form-group">
+					    <label for="firstname" class="col-sm-4 labelcenter">用户名：</label>
+						    <div class="col-sm-8">
+						      <input type="text" class="form-control" th:field="*{userName}" placeholder="请输入用户名"/>
+						    </div>
+					  </div>
+					  <div class="form-group">
+					    <label for="firstname" class="col-sm-4 labelcenter">密码：</label>
+					    <div class="col-sm-8">
+					     	 <input type="password" class="form-control" th:field="*{passWord}" placeholder="请输入密码"/>
+					    </div>
+					  </div>
+					  <div class="form-group">
+					    <div class="col-sm-10">
+					      <button type="submit" class="btn btn-default submit">登录</button>
+					    </div>
+					  </div>
+					  <div th:if="${#fields.hasErrors('*')}">  
+				          <p th:each="error : ${#fields.errors('*')}"   class="alert alert-danger"
+				              th:text="${error}">Validation error  
+				          </p>  
+		        </div> 
+				</form>
+				<!-- <p th:if="${#fields.hasErrors('*{userName}')}" th:errors="*{userName}" th:errorclass="fieldError"></p>  
+				<p th:if="${#fields.hasErrors('*{passWord}')}" th:errors="*{passWord}" th:errorclass="fieldError"></p>  --> 
+				<!-- <div th:if="${#fields.hasErrors('login')}" class="alert alert-error">  
+		          <p th:each="error : ${#fields.errors('login')}"  
+		              th:text="${error}">Validation error  
+		          </p>  
+		        </div> -->
+			</div>
+		</div>
+	</div>
+</body>
+</html>
