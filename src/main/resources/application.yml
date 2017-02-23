@@ -12,9 +12,9 @@ spring:
     username: root
     password:
     driver-class-name: com.mysql.jdbc.Driver
-    minIdle: 1  
-    maxActive: 2  
-    initialSize: 1  
+    minIdle: 20
+    maxActive: 50  
+    initialSize: 10
     timeBetweenEvictionRunsMillis: 3000  
     minEvictableIdleTimeMillis: 300000  
     validationQuery: SELECT 'ZTM' FROM DUAL  
@@ -36,10 +36,7 @@ spring:
     encoding:
       force: true
       charset: utf-8
-    
-mybatis:   
-  mapperLocations: classpath*:com/bs/wt/mapper/*.xml  
-  typeAliasesPackage: com.bs.wt.bean
+
 fixed:
      switch: 10
 qiniu:

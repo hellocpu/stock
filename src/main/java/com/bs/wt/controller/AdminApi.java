@@ -6,14 +6,17 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.bs.wt.bean.Login;
+import com.bs.wt.mongo.DfpMongo;
 
 
 @Controller
@@ -25,6 +28,9 @@ public class AdminApi {
 	private String passWord;
 	
 	private final static String LOGIN = "admin/admin";
+	
+	@Autowired
+	private DfpMongo dfpMongo;
 	
 	@RequestMapping(value = "/admin",method=RequestMethod.GET)
 	public String admin(Login login){
@@ -58,4 +64,12 @@ public class AdminApi {
 		cookie.setMaxAge(-1);
 		response.addCookie(cookie);
 	}
+	
+	@ResponseBody
+	@RequestMapping("mongo")
+	public String testMongo(){
+		return dfpMongo.findAll().size() +"";
+		
+	}
+	
 }

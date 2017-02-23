@@ -22,6 +22,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.bs.wt.bean.PushForm;
 import com.bs.wt.bean.TmpTitle;
 import com.bs.wt.service.PostService;
+import com.bs.wt.service.TestService;
 import com.bs.wt.util.UpTokenUtil;
 
 
@@ -38,6 +39,9 @@ public class SimpleController {
 	
 	@Autowired
 	private PostService postService;
+	
+	@Autowired
+	private TestService testService;
 	
 	private static final String QINIU_PRE = "http://ojye0ss9l.bkt.clouddn.com/";
 	
@@ -64,6 +68,7 @@ public class SimpleController {
 	
 	@RequestMapping(value="/",method=RequestMethod.GET)
 	public String toIndex(Model model){
+		testService.sayHello();
 		return index(null, model);
 	}
 	

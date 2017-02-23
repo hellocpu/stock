@@ -1,5 +1,6 @@
 package com.bs.wt;
 
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.BeanCreationException;
 import org.springframework.boot.Banner.Mode;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -9,6 +10,7 @@ import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
 @ComponentScan(basePackages = { "com.bs.wt" })
+@MapperScan(basePackages = "com.bs.wt.mapper")
 public class Application {
 
     public static void main(String[] args) {
