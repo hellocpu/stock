@@ -1,6 +1,6 @@
 .lanren{ position:absolute; right:0; top:150px;}
-.lanren .slide_min{ width:28px; height:112px; background:url(http://demo.lanrenzhijia.com/2014/service1205/images/slide_min.jpg) no-repeat; cursor:pointer;}
-.lanren .slide_box{ width:154px; height:auto; overflow:hidden; background:url(http://demo.lanrenzhijia.com/2014/service1205/images/slide_box_bg.jpg) repeat-y; font-size:12px; text-align:center; line-height:130%; color:#666; border-bottom:2px solid #76A20D;}
+.lanren .slide_min{ width:28px; height:112px; background:url(/images/slide_min.jpg) no-repeat; cursor:pointer;}
+.lanren .slide_box{ width:154px; height:auto; overflow:hidden; background:url(/images/slide_box_bg.jpg) repeat-y; font-size:12px; text-align:center; line-height:130%; color:#666; border-bottom:2px solid #76A20D;}
 .lanren .slide_box .weixin{ margin-bottom:5px;}
 .lanren .slide_box img{ cursor:pointer;}
 .lanren .slide_box p{ text-align:center; padding:5px; margin:5px;border-bottom:1px solid #ddd;}

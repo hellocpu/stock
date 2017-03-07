@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.bs.wt.bean.PushForm;
 import com.bs.wt.mapper.PostMapper;
+import com.bs.wt.util.RandomDate;
 
 @Service
 public class PostService {
@@ -15,8 +16,15 @@ public class PostService {
 	@Autowired
 	private PostMapper postMapper;
 	
+	private static int TYPE = 1;
+	
 	public int savePost(PushForm push){
-		push.setCreatetime(new Date());
+		if(push.getType() == TYPE){
+			// 明日必涨 ，时间随机
+			push.setCreatetime(RandomDate.randomDate());
+		}else{
+			push.setCreatetime(new Date());
+		}
 		postMapper.save(push);
 		return 1;
 	}
