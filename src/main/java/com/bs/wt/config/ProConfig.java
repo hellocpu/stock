@@ -6,8 +6,6 @@ import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 import org.springframework.core.io.ClassPathResource;
 
 /**
- * 使用 @Configuration 加载属性文件
- * 另一种方法 详见 JdbcConfig.java
  * @author bangsun
  *
  */

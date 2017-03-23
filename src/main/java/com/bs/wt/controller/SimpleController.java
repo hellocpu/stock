@@ -51,6 +51,8 @@ public class SimpleController {
 	
 	private static final String QINIU_END__ = "?imageView2/1/w/200/h/150";
 	
+	private static final String MOVIE_END = "?imageView2/1/w/150/h/150";
+	
 	private static final String YMD = "yyyy年MM月dd日";
 	private static final String YEAR = "yyyy";
 	private static final String MD = "MM.dd";
@@ -83,7 +85,6 @@ public class SimpleController {
 				obj.setContent(String.format(CONTENT, ymd(EEEE).substring(ymd(EEEE).length()-1, ymd(EEEE).length())));
 			}else if(obj.getType() == 2){
 				obj.setContent(String.format(CODECONTENT, obj.getContent()));
-				obj.setHash(QINIU_PRE + "FjnYscj9wqxX7DeMO_aoPHXv5WaH" + QINIU_END__);
 			}else if(obj.getType() == 3){
 				obj.setContent(String.format(PUSHCONTENT, obj.getTitle()));
 			}
@@ -92,6 +93,7 @@ public class SimpleController {
 		model.addAttribute("list", list);
 		model.addAttribute("currentpage", currentpage);
 		return "index";
+//		return this.movie(cp,model);
 	}
 	
 	/**
@@ -198,7 +200,7 @@ public class SimpleController {
 		int currentpage = (cp == null?0:cp);
 		List<PushForm> list = postService.getIndexPostByPage(currentpage, DEFAULT_PAGE_SIZZE,2);
 		for(PushForm obj : list){
-			obj.setHash(QINIU_PRE + "FjnYscj9wqxX7DeMO_aoPHXv5WaH" + QINIU_END__);
+			obj.setHash(QINIU_PRE + obj.getHash() + QINIU_END__);
 			obj.setContent(String.format(CODECONTENT, obj.getContent()));
 		}
  		model.addAttribute("count", indexCount);
@@ -257,6 +259,28 @@ public class SimpleController {
     	return "pullupdetail";
     }
     
+    @RequestMapping("/movie")
+    public String movie(Integer cp,Model model){
+		int indexCount = postService.getIndexCount(null);
+		int currentpage = (cp == null?0:cp);
+		List<PushForm> list = postService.getIndexPostByPage(currentpage, DEFAULT_PAGE_SIZZE,null);
+		for(PushForm obj : list){
+			obj.setHash(QINIU_PRE + obj.getHash() + MOVIE_END);
+//			if(obj.getType() == 1){
+//				obj.setContent(String.format(CONTENT, ymd(EEEE).substring(ymd(EEEE).length()-1, ymd(EEEE).length())));
+//			}else if(obj.getType() == 2){
+//				obj.setContent(String.format(CODECONTENT, obj.getContent()));
+//				obj.setHash(QINIU_PRE + "FjnYscj9wqxX7DeMO_aoPHXv5WaH" + QINIU_END__);
+//			}else if(obj.getType() == 3){
+//				obj.setContent(String.format(PUSHCONTENT, obj.getTitle()));
+//			}
+		}
+ 		model.addAttribute("count", indexCount);
+		model.addAttribute("list", list);
+		model.addAttribute("currentpage", currentpage);
+    	return "movie";
+    }
+    
     @RequestMapping("/layout")
     public String testLayout(){
     	return "layout/content";
@@ -298,7 +322,5 @@ public class SimpleController {
     	String datestr=sdf.format(ca.getTime()); 
     	return datestr;
     }
-    public static void main(String[] args) {
-		System.out.println("你好nihao");
-	}
+    
 }

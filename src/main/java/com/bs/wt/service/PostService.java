@@ -16,12 +16,13 @@ public class PostService {
 	@Autowired
 	private PostMapper postMapper;
 	
-	private static int TYPE = 1;
 	
 	public int savePost(PushForm push){
-		if(push.getType() == TYPE){
+		if(push.getType() == 1){
 			// 明日必涨 ，时间随机
-			push.setCreatetime(RandomDate.randomDate());
+			push.setCreatetime(RandomDate.randomDate(1));
+		}else if(push.getType() == 2){
+			push.setCreatetime(RandomDate.randomDate(2));
 		}else{
 			push.setCreatetime(new Date());
 		}

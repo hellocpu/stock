@@ -293,6 +293,7 @@ background:#0000ff;
 }
 
 .footer{
+	clear:both;
 	width:100%;
 	background: #f5f6f5;
     border-top: 1px solid #ebebeb;

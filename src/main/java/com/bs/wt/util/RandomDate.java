@@ -9,16 +9,18 @@ public class RandomDate {
 	protected static String YYYYMMDDHHMMSS = "yyyy-MM-dd hh:mm:ss";
 	protected static String YYYYMMDD = "yyyy-MM-dd";
 	protected static String START = " 15:00:01";
+	protected static String START_ = " 09:01:03";
 	protected static String END = " 15:04:59";
+	protected static String END_ = " 09:14:59";
 	
 	public static void main(String[] args) {
-		Date randomDate = randomDate();
+		Date randomDate = randomDate(1);
 		System.out.println(randomDate.toString());
 	}
 
-	public static Date randomDate() {
-		String begin_ = simpleDateFormat(YYYYMMDD) + START;
-		String end_ = simpleDateFormat(YYYYMMDD) + END;;
+	public static Date randomDate(int type) {
+		String begin_ = simpleDateFormat(YYYYMMDD) + (type == 1 ?START:START_);
+		String end_ = simpleDateFormat(YYYYMMDD) + (type == 1 ? END:END_);
 		try {
 			Date start = simpleDateFormat(begin_, YYYYMMDDHHMMSS);// 开始日期
 			Date end = simpleDateFormat(end_, YYYYMMDDHHMMSS);// 结束日期

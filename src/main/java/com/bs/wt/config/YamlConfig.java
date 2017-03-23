@@ -3,7 +3,6 @@ package com.bs.wt.config;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
 /**
- * 加载非application.yml的yml文件
  * 
  * @author bangsun
  *
