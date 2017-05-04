@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+	layout:decorator="layout/layout" th:with="current='movie'">
+	<div layout:fragment="content" class="content_">
+		<div class="movie"  th:each="obj:${list}">
+			<div class="movie_left">
+				<img th:src="@{(${obj.hash})}" />
+			</div>
+			<div class="movie_right">
+				<div class="movie_title" th:text="${obj.title}"></div>
+				<div class="movie_content" th:text="${obj.content}"></div>
+			</div>
+		</div>
+	</div>
+</html>

@@ -22,9 +22,9 @@ import com.bs.wt.mongo.DfpMongo;
 @Controller
 public class AdminApi {
 	
-	@Value("${login.userName}")
+	@Value("${login.userName:cjl}")
 	private String userName;
-	@Value("${login.passWord}")
+	@Value("${login.passWord:laohekoucjl!@#}")
 	private String passWord;
 	
 	private final static String LOGIN = "admin/admin";

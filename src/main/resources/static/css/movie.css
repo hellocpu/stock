@@ -1,0 +1,38 @@
+.movie {
+	width: 100%;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	height: 150px;
+}
+
+.movie:hover{
+	background:#f9f9f9;
+	cursor: pointer;
+}
+
+.movie_left {
+	width: 150px;
+	height: 150px;
+	float: left;
+}
+
+.movie_right {
+	width: 860px;
+	height: 150px;
+	float: left;
+}
+
+.movie_title{
+	text-align: center;
+	height: 18px;
+	line-height: 18px;
+	padding:10px;
+	padding-bottom: 8px;
+	font-size: 20px;
+	font-weight:900
+}
+
+.movie_content{
+	text-indent: 10px;
+	padding: 0 10px;
+}
